@@ -39,9 +39,9 @@ export default function(sequelize, DataTypes) {
     });
 
     Customer.associate = function(models) {
-        Customer.belongsToMany(models.Customer, { through: 'Relationships' })
-        Customer.belongsToMany(models.Vehicle, { through: 'Relationships' })
-        Customer.belongsToMany(models.Transaction, { through: 'Relationships' });
+        Customer.belongsToMany(models.Customer, { through: 'RelationsCC' })
+        Customer.belongsToMany(models.Vehicle, { through: 'RelationsCV' })
+        Customer.belongsToMany(models.Transaction, { through: 'RelationsCT' });
     }
     return Customer;
 };

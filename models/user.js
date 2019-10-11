@@ -18,13 +18,13 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     User.associate = function(models) {
-        User.belongsTo(models.Transaction, {
+        User.hasMany(models.Transaction, {
             foreignkey: {
                 allowNull: true
             }
         });
 
-        User.belongsTo(models.Report, {
+        User.hasMany(models.Report, {
             foreignkey: {
                 allowNull: true
             }
