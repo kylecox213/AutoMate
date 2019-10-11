@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
     let Transaction = sequelize.define("Transaction", {
+        date: {
+            type: DataTypes.TIMESTAMP,
+            allowNull: false
+        },
         parts: {
             type: DataTypes.ARRAY,
             allowNull: false,
