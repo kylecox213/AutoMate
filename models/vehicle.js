@@ -1,22 +1,30 @@
 module.exports = function(sequelize, DataTypes) {
     let Vehicle = sequelize.define("Vehicle", {
-        Make: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        Model: {
+        make: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        Year: {
+        model: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        year: {
             type: DataTypes.INTEGER(4),
             allowNull: false
         },
-        Color: {
+        odometer: {
+            type: DataTypes.INTEGER(6),
+            allowNull: true
+        },
+        color: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: true
         },
         plateNumber: {
+            type: DataTypes.STRING(8),
+            allowNull: true
+        },
+        note: {
             type: DataTypes.STRING,
             allowNull: true
         },
