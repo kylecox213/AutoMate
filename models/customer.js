@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+export default function(sequelize, DataTypes) {
     let Customer = sequelize.define("Customer", {
         firstName: {
             type: DataTypes.STRING,
@@ -43,6 +43,5 @@ module.exports = function(sequelize, DataTypes) {
         Customer.belongsToMany(models.Vehicle, { through: 'Relationships' })
         Customer.belongsToMany(models.Transaction, { through: 'Relationships' });
     }
-
     return Customer;
 };
