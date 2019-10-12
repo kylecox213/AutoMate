@@ -36,22 +36,22 @@ export default {
 
   // GET all Customers
   getCustomers: function () {
-    return axios.get("/api/Customers");
+    return axios.get("/api/customers");
   },
   // GET one Customer with the given id
   getThisCustomer: function (id) {
-    return axios.get("/api/Customers" + id);
+    return axios.get("/api/customers" + id);
   },
   // ADD a new Customer to the database
-  createNewCustomer: function (CustomerData) {
-    return axios.post("/api/Customers", CustomerData)
+  addNewCustomer: function (CustomerData) {
+    return axios.post("/api/customers", CustomerData)
   },
   // DELETE (destroy in Sequelize) a Customer with the given id
   // -------------------------------------- //
   // DO WE NEED THIS ROUTE?
   // -------------------------------------- //
   deleteThisCustomer: function (id) {
-    return axios.delete("api/Customers" + id);
+    return axios.delete("api/customers" + id);
   },
 
 
@@ -62,7 +62,22 @@ export default {
 
   // GET all Vehicles
   getVehicles: function () {
-    return axios.get("/api/Vehicles");
+    return axios.get("/api/vehicles");
+  },
+  // GET one Vehicle with the given id
+  getThisVehicle: function (id) {
+    return axios.get("/api/vehicles/" + id);
+  },
+  // ADD a new Vehicle to the database
+  addNewVehicle: function (VehicleData) {
+    return axios.post("/api/vehicles", VehicleData)
+  },
+  // DELETE (destroy in Sequelize) a Vehicle with the given id
+  // -------------------------------------- //
+  // DO WE NEED THIS ROUTE?
+  // -------------------------------------- //
+  deleteThisVehicle: function (id) {
+    return axios.delete("api/vehicles" + id);
   },
 
 
@@ -73,7 +88,11 @@ export default {
 
   // GET all Transactions
   getTransactions: function () {
-    return axios.get("/api/Transactions");
+    return axios.get("/api/transactions");
+  },
+  // GET one Customer with the given id
+  getThisTransaction: function (id) {
+    return axios.get("/api/transactions/" + id);
   },
 
 
@@ -84,7 +103,7 @@ export default {
 
   // GET all Reports
   getReports: function () {
-    return axios.get("/api/Reports");
+    return axios.get("/api/reports");
   }
 
 
