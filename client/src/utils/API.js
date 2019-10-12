@@ -29,6 +29,27 @@ export default {
   // USER ROUTES
   // -------------------------------------- //
 
+  // GET all Users
+  getUsers: function () {
+    return axios.get("/api/users");
+  },
+  // GET one User with the given id
+  getThisUser: function (id) {
+    return axios.get("/api/users/" + id);
+  },
+  // ADD a new User to the database
+  addNewUser: function (userData) {
+    return axios.post("/api/users", userData)
+  },
+  // UPDATE a User with the given id
+  updateThisUser: function (id, UserData) {
+    return axios.put("/api/users/" + id, UserData)
+  },
+  // DELETE (destroy in Sequelize) a User with the given id
+  deleteThisUser: function (id) {
+    return axios.delete("api/users/" + id);
+  },
+
 
   // -------------------------------------- //
   // CUSTOMER ROUTES
@@ -36,22 +57,23 @@ export default {
 
   // GET all Customers
   getCustomers: function () {
-    return axios.get("/api/Customers");
+    return axios.get("/api/customers");
   },
   // GET one Customer with the given id
   getThisCustomer: function (id) {
-    return axios.get("/api/Customers" + id);
+    return axios.get("/api/customers/" + id);
   },
   // ADD a new Customer to the database
-  createNewCustomer: function (CustomerData) {
-    return axios.post("/api/Customers", CustomerData)
+  addNewCustomer: function (CustomerData) {
+    return axios.post("/api/customers", CustomerData)
+  },
+  // UPDATE a Customer with the given id
+  updateThisCustomer: function (id, CustomerData) {
+    return axios.put("/api/customers/" + id, CustomerData)
   },
   // DELETE (destroy in Sequelize) a Customer with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
   deleteThisCustomer: function (id) {
-    return axios.delete("api/Customers" + id);
+    return axios.delete("api/customers/" + id);
   },
 
 
@@ -62,7 +84,23 @@ export default {
 
   // GET all Vehicles
   getVehicles: function () {
-    return axios.get("/api/Vehicles");
+    return axios.get("/api/vehicles");
+  },
+  // GET one Vehicle with the given id
+  getThisVehicle: function (id) {
+    return axios.get("/api/vehicles/" + id);
+  },
+  // ADD a new Vehicle to the database
+  addNewVehicle: function (VehicleData) {
+    return axios.post("/api/vehicles", VehicleData)
+  },
+  // UPDATE a Vehicle with the given id
+  updateThisVehicle: function (id, VehicleData) {
+    return axios.put("/api/vehicles/" + id, VehicleData)
+  },
+  // DELETE (destroy in Sequelize) a Vehicle with the given id
+  deleteThisVehicle: function (id) {
+    return axios.delete("api/vehicles/" + id);
   },
 
 
@@ -73,7 +111,23 @@ export default {
 
   // GET all Transactions
   getTransactions: function () {
-    return axios.get("/api/Transactions");
+    return axios.get("/api/transactions");
+  },
+  // GET one Transaction with the given id
+  getThisTransaction: function (id) {
+    return axios.get("/api/transactions/" + id);
+  },
+  // ADD a new Transaction to the database
+  addNewTransaction: function (TransactionData) {
+    return axios.post("/api/transactions", TransactionData)
+  },
+  // UPDATE a Transaction with the given id
+  updateThisTransaction: function (id, TransactionData) {
+    return axios.put("/api/transactions/" + id, TransactionData)
+  },
+  // DELETE (destroy in Sequelize) a Transaction with the given id
+  deleteThisTransaction: function (id) {
+    return axios.delete("api/transactions/" + id);
   },
 
 
@@ -84,7 +138,19 @@ export default {
 
   // GET all Reports
   getReports: function () {
-    return axios.get("/api/Reports");
+    return axios.get("/api/reports");
+  },
+  // GET one Report with the given id
+  getThisReport: function (id) {
+    return axios.get("/api/reports/" + id);
+  },
+  // ADD a new Report to the database
+  addNewReport: function (report) {
+    return axios.post("/api/reports", report)
+  },
+  // DELETE (destroy in Sequelize) a Report with the given id
+  deleteThisReport: function (id) {
+    return axios.delete("api/reports/" + id);
   }
 
 
