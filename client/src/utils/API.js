@@ -29,6 +29,26 @@ export default {
   // USER ROUTES
   // -------------------------------------- //
 
+  // GET all Users
+  getUsers: function () {
+    return axios.get("/api/users");
+  },
+  // GET one User with the given id
+  getThisUser: function (id) {
+    return axios.get("/api/users/" + id);
+  },
+  // ADD a new User to the database
+  addNewUser: function (userData) {
+    return axios.post("/api/users", userData)
+  },
+  // DELETE (destroy in Sequelize) a User with the given id
+  // -------------------------------------- //
+  // DO WE NEED THIS ROUTE?
+  // -------------------------------------- //
+  deleteThisUser: function (id) {
+    return axios.delete("api/users/" + id);
+  },
+
 
   // -------------------------------------- //
   // CUSTOMER ROUTES
@@ -40,7 +60,7 @@ export default {
   },
   // GET one Customer with the given id
   getThisCustomer: function (id) {
-    return axios.get("/api/customers" + id);
+    return axios.get("/api/customers/" + id);
   },
   // ADD a new Customer to the database
   addNewCustomer: function (CustomerData) {
