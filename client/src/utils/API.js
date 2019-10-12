@@ -41,10 +41,11 @@ export default {
   addNewUser: function (userData) {
     return axios.post("/api/users", userData)
   },
+  // UPDATE a User with the given id
+  updateThisUser: function (id, UserData) {
+    return axios.put("/api/users/" + id, UserData)
+  },
   // DELETE (destroy in Sequelize) a User with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
   deleteThisUser: function (id) {
     return axios.delete("api/users/" + id);
   },
@@ -66,10 +67,11 @@ export default {
   addNewCustomer: function (CustomerData) {
     return axios.post("/api/customers", CustomerData)
   },
+  // UPDATE a Customer with the given id
+  updateThisCustomer: function (id, CustomerData) {
+    return axios.put("/api/customers/" + id, CustomerData)
+  },
   // DELETE (destroy in Sequelize) a Customer with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
   deleteThisCustomer: function (id) {
     return axios.delete("api/customers/" + id);
   },
@@ -92,10 +94,11 @@ export default {
   addNewVehicle: function (VehicleData) {
     return axios.post("/api/vehicles", VehicleData)
   },
+  // UPDATE a Vehicle with the given id
+  updateThisVehicle: function (id, VehicleData) {
+    return axios.put("/api/vehicles/" + id, VehicleData)
+  },
   // DELETE (destroy in Sequelize) a Vehicle with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
   deleteThisVehicle: function (id) {
     return axios.delete("api/vehicles/" + id);
   },
@@ -118,10 +121,11 @@ export default {
   addNewTransaction: function (TransactionData) {
     return axios.post("/api/transactions", TransactionData)
   },
+  // UPDATE a Transaction with the given id
+  updateThisTransaction: function (id, TransactionData) {
+    return axios.put("/api/transactions/" + id, TransactionData)
+  },
   // DELETE (destroy in Sequelize) a Transaction with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
   deleteThisTransaction: function (id) {
     return axios.delete("api/transactions/" + id);
   },
@@ -140,14 +144,11 @@ export default {
   getThisReport: function (id) {
     return axios.get("/api/reports/" + id);
   },
-  // ADD a new Transaction to the database
+  // ADD a new Report to the database
   addNewReport: function (report) {
     return axios.post("/api/reports", report)
   },
-  // DELETE (destroy in Sequelize) a Transaction with the given id
-  // -------------------------------------- //
-  // DO WE NEED THIS ROUTE?
-  // -------------------------------------- //
+  // DELETE (destroy in Sequelize) a Report with the given id
   deleteThisReport: function (id) {
     return axios.delete("api/reports/" + id);
   }
