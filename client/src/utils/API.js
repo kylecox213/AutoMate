@@ -53,15 +53,15 @@ export default {
   },
   // GET all Transactions for the Customer with the given id
   getCustomerTransactions: function (id) {
-    return axios.get("/api/customers/" + id + "transactions/");
+    return axios.get("/api/customers/" + id + "/transactions");
   },
   // GET all Vehicles for the Customer with the given id
   getCustomerVehicles: function (id) {
-    return axios.get("/api/customers/" + id + "vehicles/");
+    return axios.get("/api/customers/" + id + "/vehicles");
   },
   // GET all Vehicles for the Customer with the given id
   getCustomerRelatives: function (id) {
-    return axios.get("/api/customers/" + id + "relatives/");
+    return axios.get("/api/customers/" + id + "/relatives");
   },
 
 
@@ -92,7 +92,7 @@ export default {
   },
   // GET all Transactions for the Vehicle with the given id
   getVehicleTransactions: function (id) {
-    return axios.get("/api/vehicles/" + id + "transactions/");
+    return axios.get("/api/vehicles/" + id + "/transactions");
   },
 
 
@@ -120,6 +120,14 @@ export default {
   // DELETE (destroy in Sequelize) a Transaction with the given id
   deleteThisTransaction: function (id) {
     return axios.delete("api/transactions/" + id);
+  },
+  // GET all Vehicles for the Transaction with the given id
+  getTransactionVehicles: function (id) {
+    return axios.get("/api/transactions" + id + "/vehicles");
+  },
+  // GET all Customers for the Transaction with the given id
+  getTransactionCustomers: function (id) {
+    return axios.get("/api/transactions" + id + "/customers");
   },
 
 
