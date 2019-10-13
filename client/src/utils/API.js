@@ -1,30 +1,6 @@
 import axios from "axios";
 
 export default {
-  // Gets all Templates
-  getTemplates: function () {
-    return axios.get("/api/Templates");
-  },
-  // Gets the Template with the given id
-  getTemplate: function (id) {
-    return axios.get("/api/Templates/" + id);
-  },
-  // Deletes the Template with the given id
-  deleteTemplate: function (id) {
-    return axios.delete("/api/Templates/" + id);
-  },
-  // Saves a Template to the database
-  saveTemplate: function (TemplateData) {
-    return axios.post("/api/Templates", TemplateData);
-  },
-
-  // -------------------------------------- //
-  // Above this are template routes for inspiration
-  // Below are routes needed for the application
-  // -------------------------------------- //
-
-
-
   // -------------------------------------- //
   // USER ROUTES
   // -------------------------------------- //
@@ -101,6 +77,10 @@ export default {
   // DELETE (destroy in Sequelize) a Vehicle with the given id
   deleteThisVehicle: function (id) {
     return axios.delete("api/vehicles/" + id);
+  },
+  // GET all Transactions for the Vehicle with the given id
+  getVehicleTransactions: function (id) {
+    return axios.get("/api/vehicles/" + id + "transactions/");
   },
 
 

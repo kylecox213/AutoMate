@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const templateRoute = require("./template");
+const vehicleRoutes = require("./vehicle");
 
 // API routes
-router.use("/template", templateRoute);
+router.use("/vehicles", vehicleRoutes);
 
 module.exports = router;
