@@ -12,7 +12,7 @@ router.route("/:id")
     .put(vehicleController.update)
     .delete(vehicleController.remove);
 
-// Matches with "/api/vehicles/transactions/:id"
+// Matches with "/api/vehicles/:id/transactions"
 router.route("/:id/transactions")
     .get(vehicleController.pullTransactions);
 

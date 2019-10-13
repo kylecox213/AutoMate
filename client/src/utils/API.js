@@ -51,6 +51,18 @@ export default {
   deleteThisCustomer: function (id) {
     return axios.delete("api/customers/" + id);
   },
+  // GET all Transactions for the Customer with the given id
+  getCustomerTransactions: function (id) {
+    return axios.get("/api/customers/" + id + "transactions/");
+  },
+  // GET all Vehicles for the Customer with the given id
+  getCustomerVehicles: function (id) {
+    return axios.get("/api/customers/" + id + "vehicles/");
+  },
+  // GET all Vehicles for the Customer with the given id
+  getCustomerRelatives: function (id) {
+    return axios.get("/api/customers/" + id + "relatives/");
+  },
 
 
 
