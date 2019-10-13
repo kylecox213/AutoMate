@@ -13,18 +13,35 @@ export default {
   getThisUser: function (id) {
     return axios.get("/api/users/" + id);
   },
-  // ADD a new User to the database
+  // POST to add a new User to the database
   addNewUser: function (userData) {
-    return axios.post("/api/users", userData)
+    return axios.post("/api/users/register", userData)
   },
   // UPDATE a User with the given id
   updateThisUser: function (id, UserData) {
     return axios.put("/api/users/" + id, UserData)
   },
-  // DELETE (destroy in Sequelize) a User with the given id
+  // DELETE (destroy) a User with the given id
   deleteThisUser: function (id) {
     return axios.delete("api/users/" + id);
   },
+  // POST to log User into the application
+  userLogin: function () {
+    return axios.post("/api/users/login");
+  },
+  // GET to log User out of the application
+  userLogout: function () {
+    return axios.get("/api/users/logout");
+  },
+  // GET all Transactions for the User with the given id
+  getUserTransactions: function (id) {
+    return axios.get("/api/users/" + id + "/transactions");
+  },
+  // GET all Reports for the User with the given id
+  getUserReports: function (id) {
+    return axios.get("/api/users/" + id + "/reports");
+  },
+
 
 
   // -------------------------------------- //
