@@ -1,4 +1,4 @@
-export default function(sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     let Customer = sequelize.define("Customer", {
         firstName: {
             type: DataTypes.STRING,
@@ -39,8 +39,9 @@ export default function(sequelize, DataTypes) {
     });
 
     Customer.associate = function(models) {
-        Customer.belongsToMany(models.Customer, { through: 'RelationsCC' })
-        Customer.belongsToMany(models.Vehicle, { through: 'RelationsCV' })
+        Customer.belongsToMany(models.Customer, { as: 'Principals', foreignKey: 'primaryId', through: 'RelationsCC', onDelete: 'CASCADE' });
+        Customer.belongsToMany(models.Customer, { as: 'Relatives', foreignKey: 'relativeId', through: 'RelationsCC', onDelete: 'CASCADE' });
+        Customer.belongsToMany(models.Vehicle, { through: 'RelationsCV' });
         Customer.belongsToMany(models.Transaction, { through: 'RelationsCT' });
     }
     return Customer;

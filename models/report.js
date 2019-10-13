@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
     let Report = sequelize.define("Report", {
         dateBegin: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
         },
         dateEnd: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         salesResolution: {
