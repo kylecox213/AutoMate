@@ -1,6 +1,6 @@
 const db = require("../models");
 const passport = require("../middleware/config/passport");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+const isAuthenticated = require("../middleware/config/isAuthenticated");
 
 // Defining methods for the UsersController
 module.exports = {
@@ -68,7 +68,7 @@ module.exports = {
     },
     login: function (req, res, next) {
         // User passport to authenticate the user based on the POST body
-        passport.authenticate("local", function (err, user, info) {
+        passport.authenticate("local"), function (err, user, info) {
             // If there's an error right off the bat, return it
             if (err) { return next(err); }
             // Otherwise, if there's no user, 
@@ -80,7 +80,7 @@ module.exports = {
                 // Finally, redirect the user to the /app route to access the application
                 return res.redirect("/app");
             });
-        })
+        }
     },
     // When the logout route is requested...
     logout: function (req, res) {

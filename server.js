@@ -18,7 +18,7 @@ const db = require("./models");
 
 // Global vars
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 
 // Middleware
 // Set up to handle URL and JSON parsing
@@ -28,6 +28,8 @@ app.use(bodyParser.json());
 // Serve up static assets in production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
+} else if (process.env.NODE_ENV === "development")  {
+    app.use(express.static("client/public"))
 }
 
 // Set up session to keep track of user login status

@@ -18,7 +18,7 @@ if (config.use_env_variable) {
         config
     );
 }
-
+console.log("STORAGE PATH FOR DB: " + sequelize.options.storage);
 fs
     .readdirSync(__dirname)
     .filter(file => {
