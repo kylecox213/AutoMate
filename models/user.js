@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             unique: true,
             validate: {
-                isUserName: true
+                isAlphanumeric: true,
+                len: [3, 24]
             }
         },
 
@@ -18,18 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     User.associate = function(models) {
-        User.hasMany(models.Transaction, {
-            foreignkey: {
-                allowNull: true
-            }
-        });
-
-        User.hasMany(models.Report, {
-            foreignkey: {
-                allowNull: true
-            }
-        });
-
+        User.hasMany(models.Transaction);
+        User.hasMany(models.Report);
     };
 
     User.prototype.validPassword = function(password) {
