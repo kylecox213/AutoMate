@@ -1,6 +1,6 @@
 const db = require("../models");
-const passport = require("../middleware/config/passport");
-const isAuthenticated = require("../middleware/config/isAuthenticated");
+const passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Defining methods for the UsersController
 module.exports = {
@@ -17,6 +17,8 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
+        console.log("User registration request with the following credentials:");
+        console.log(req.body);
         // On request to create a new user, first check to see if an existing user already has that name
         db.User
             .findOne({ where: { username: req.body.username } })
@@ -34,7 +36,7 @@ module.exports = {
                         // After creating the new user, return it
                         .then(newUser => { return newUser })
                         // And then redirect the user through the login route to be authenticated and logged in
-                        .then(res.redirect(307, "/api/users/login"))
+                        .then(res.redirect("/api/users/login"))
                         // If there's an error, send it to the client
                         .catch(err => res.status(422).json(err));
                 }
@@ -67,20 +69,11 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     login: function (req, res, next) {
+        console.log("User login request with the following credentials:");
+        console.log(req.body);
         // User passport to authenticate the user based on the POST body
-        passport.authenticate("local"), function (err, user, info) {
-            // If there's an error right off the bat, return it
-            if (err) { return next(err); }
-            // Otherwise, if there's no user, 
-            if (!user) { throw new Error("Incorrect username or password"); }
-            // Otherwise, the user should be logged in
-            req.logIn(user, function (err) {
-                // Send the error if there is one
-                if (err) { return next(err); }
-                // Finally, redirect the user to the /app route to access the application
-                return res.redirect("/app");
-            });
-        }
+        passport.authenticate("local");
+        console.log("Successful login.");
     },
     // When the logout route is requested...
     logout: function (req, res) {

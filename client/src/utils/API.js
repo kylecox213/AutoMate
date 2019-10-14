@@ -26,8 +26,8 @@ export default {
     return axios.delete("api/users/" + id);
   },
   // POST to log User into the application
-  userLogin: function () {
-    return axios.post("/api/users/login");
+  userLogin: function (userData) {
+    return axios.post("/api/users/login", userData);
   },
   // GET to log User out of the application
   userLogout: function () {
