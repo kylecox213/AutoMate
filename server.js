@@ -18,7 +18,7 @@ const db = require("./models");
 
 // Global vars
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 // Set up to handle URL and JSON parsing

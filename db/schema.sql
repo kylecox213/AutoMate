@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS automate;
-CREATE DATABASE automate;
-

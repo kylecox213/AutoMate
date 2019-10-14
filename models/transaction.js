@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     let Transaction = sequelize.define("Transaction", {
         date: {
             type: DataTypes.DATEONLY,
@@ -30,9 +30,8 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    User.associate = function(models) {
-
-        //refrence to transaction: transactionId is the column in the DB and RelationTV is the table name
+    Transaction.associate = function (models) {
+        // reference to transaction: transactionId is the column in the DB and RelationTV is the table name
         Transaction.belongsToMany(models.Vehicle, { as: 'Transactions', foreignKey: 'transactionId', through: 'RelationsTV' });
         Transaction.belongsTo(models.Customer);
     };

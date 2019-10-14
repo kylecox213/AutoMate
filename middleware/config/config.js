@@ -1,17 +1,20 @@
+const path = require("path");
+
 module.exports = {
     "development": {
-        "username": process.env.MYSQL_USER,
-        "password": process.env.MYSQL_KEY,
-        "database": process.env.MYSQL_DBNAME,
-        "host": process.env.MYSQL_HOST,
-        "dialect": "mysql",
+        "username": process.env.SQL_USER,
+        "password": process.env.SQL_KEY,
+        "database": process.env.SQL_DBNAME,
+        "host": process.env.SQL_HOST,
+        "dialect": "sqlite",
+        "storage": path.join(__dirname, "../../db/automate.db")
     },
     "test": {
         "username": "root",
         "password": null,
         "database": "testDB",
         "host": "localhost",
-        "dialect": "mysql",
+        "dialect": "sqlite",
         "logging": false
     },
     "production": {
@@ -19,6 +22,6 @@ module.exports = {
         "password": " ",
         "database": " ",
         "host": " ",
-        "dialect": "mysql",
+        "dialect": "sqlite",
     }
 }
