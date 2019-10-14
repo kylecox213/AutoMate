@@ -7,7 +7,7 @@ module.exports = {
         "database": process.env.SQL_DBNAME,
         "host": process.env.SQL_HOST,
         "dialect": "sqlite",
-        "storage": path.join(__dirname, "../../database/automate.db")
+        "storage": path.join(__dirname, "../../db/automate.db")
     },
     "test": {
         "username": "root",

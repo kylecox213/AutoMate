@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     let Vehicle = sequelize.define("Vehicle", {
         make: {
             type: DataTypes.STRING,
@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Vehicle.associate = function(models) {
+    Vehicle.associate = function (models) {
         Vehicle.belongsToMany(models.Transaction, { through: 'RelationsTV' });
         Vehicle.belongsToMany(models.Customer, { through: 'RelationsCV' });
     }
