@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
     let Transaction = sequelize.define("Transaction", {
         date: {
-            type: DataTypes.TIMESTAMP,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         parts: {
-            type: DataTypes.ARRAY,
+            type: DataTypes.JSON,
             allowNull: false,
         },
         partsPrice: {

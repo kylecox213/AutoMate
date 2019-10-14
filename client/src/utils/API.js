@@ -1,30 +1,6 @@
 import axios from "axios";
 
 export default {
-  // Gets all Templates
-  getTemplates: function () {
-    return axios.get("/api/Templates");
-  },
-  // Gets the Template with the given id
-  getTemplate: function (id) {
-    return axios.get("/api/Templates/" + id);
-  },
-  // Deletes the Template with the given id
-  deleteTemplate: function (id) {
-    return axios.delete("/api/Templates/" + id);
-  },
-  // Saves a Template to the database
-  saveTemplate: function (TemplateData) {
-    return axios.post("/api/Templates", TemplateData);
-  },
-
-  // -------------------------------------- //
-  // Above this are template routes for inspiration
-  // Below are routes needed for the application
-  // -------------------------------------- //
-
-
-
   // -------------------------------------- //
   // USER ROUTES
   // -------------------------------------- //
@@ -37,18 +13,35 @@ export default {
   getThisUser: function (id) {
     return axios.get("/api/users/" + id);
   },
-  // ADD a new User to the database
+  // POST to add a new User to the database
   addNewUser: function (userData) {
-    return axios.post("/api/users", userData)
+    return axios.post("/api/users/register", userData)
   },
   // UPDATE a User with the given id
   updateThisUser: function (id, UserData) {
     return axios.put("/api/users/" + id, UserData)
   },
-  // DELETE (destroy in Sequelize) a User with the given id
+  // DELETE (destroy) a User with the given id
   deleteThisUser: function (id) {
     return axios.delete("api/users/" + id);
   },
+  // POST to log User into the application
+  userLogin: function () {
+    return axios.post("/api/users/login");
+  },
+  // GET to log User out of the application
+  userLogout: function () {
+    return axios.get("/api/users/logout");
+  },
+  // GET all Transactions for the User with the given id
+  getUserTransactions: function (id) {
+    return axios.get("/api/users/" + id + "/transactions");
+  },
+  // GET all Reports for the User with the given id
+  getUserReports: function (id) {
+    return axios.get("/api/users/" + id + "/reports");
+  },
+
 
 
   // -------------------------------------- //
@@ -74,6 +67,18 @@ export default {
   // DELETE (destroy in Sequelize) a Customer with the given id
   deleteThisCustomer: function (id) {
     return axios.delete("api/customers/" + id);
+  },
+  // GET all Transactions for the Customer with the given id
+  getCustomerTransactions: function (id) {
+    return axios.get("/api/customers/" + id + "/transactions");
+  },
+  // GET all Vehicles for the Customer with the given id
+  getCustomerVehicles: function (id) {
+    return axios.get("/api/customers/" + id + "/vehicles");
+  },
+  // GET all Vehicles for the Customer with the given id
+  getCustomerRelatives: function (id) {
+    return axios.get("/api/customers/" + id + "/relatives");
   },
 
 
@@ -102,6 +107,10 @@ export default {
   deleteThisVehicle: function (id) {
     return axios.delete("api/vehicles/" + id);
   },
+  // GET all Transactions for the Vehicle with the given id
+  getVehicleTransactions: function (id) {
+    return axios.get("/api/vehicles/" + id + "/transactions");
+  },
 
 
 
@@ -128,6 +137,14 @@ export default {
   // DELETE (destroy in Sequelize) a Transaction with the given id
   deleteThisTransaction: function (id) {
     return axios.delete("api/transactions/" + id);
+  },
+  // GET all Vehicles for the Transaction with the given id
+  getTransactionVehicles: function (id) {
+    return axios.get("/api/transactions" + id + "/vehicles");
+  },
+  // GET all Customers for the Transaction with the given id
+  getTransactionCustomers: function (id) {
+    return axios.get("/api/transactions" + id + "/customers");
   },
 
 
