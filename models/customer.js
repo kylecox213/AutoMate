@@ -39,10 +39,10 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Customer.associate = function(models) {
-        Customer.belongsToMany(models.Customer, { as: 'Principals', foreignKey: 'primaryId', through: 'RelationsCC', onDelete: 'CASCADE' });
-        Customer.belongsToMany(models.Customer, { as: 'Relatives', foreignKey: 'relativeId', through: 'RelationsCC', onDelete: 'CASCADE' });
+        // Customer.belongsToMany(models.Customer, { as: 'Principals', foreignKey: 'primaryId', through: 'RelationsCC', onDelete: 'CASCADE' });
+        // Customer.belongsToMany(models.Customer, { as: 'Relatives', foreignKey: 'relativeId', through: 'RelationsCC', onDelete: 'CASCADE' });
         Customer.belongsToMany(models.Vehicle, { through: 'RelationsCV' });
-        Customer.belongsToMany(models.Transaction, { through: 'RelationsCT' });
+        Customer.hasMany(models.Transaction);
     }
     return Customer;
 };
