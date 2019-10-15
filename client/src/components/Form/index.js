@@ -1,11 +1,21 @@
 import React from "react";
 
-// This file exports the Input, TextArea, and FormBtn components
+// This file exports form elements
 
 export function Input(props) {
   return (
     <div className="form-group">
+      <label htmlFor={props.id}>{props.label}</label>
       <input className="form-control" {...props} />
+    </div>
+  );
+}
+
+export function Radio(props)  {
+  return (
+    <div className="form-check">
+      <input className="form-check-input" type="radio" {...props} />
+      <label className="form-check-label" htmlFor={props.id}>{props.label}</label>
     </div>
   );
 }
