@@ -18,10 +18,11 @@ class Login extends React.Component {
     };
 
     handleLoginAttempt = event => {
+        event.preventDefault();
         if (!this.state.username || !this.state.password) {
             return;
         }
-        API.userLogin({
+        API.login({
             username: this.state.username,
             password: this.state.password
         }).catch(err => console.log(err));

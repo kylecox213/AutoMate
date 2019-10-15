@@ -22,11 +22,11 @@ class Register extends React.Component {
         if (!this.state.username || !this.state.password) {
             return;
         }
-        API.addNewUser({
+        API.registerAccount({
             username: this.state.username,
             password: this.state.password
         })
-            .then(newUser => { API.userLogin(newUser) })
+            .then(newUser => { API.login(newUser) })
             .catch(err => console.log(err));
     }
 
