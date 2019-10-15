@@ -1,10 +1,19 @@
-class Customer extends Component {
+import React from "react";
+import { Col, Row, Container } from "../components/Grid";
+import Jumbotron from "../components/Jumbotron";
 
-    state = {
-        stuff: []
-    };
-
-
-
-
+function Customer() {
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1>Customer Page</h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
+
+export default Customer;

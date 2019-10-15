@@ -7,7 +7,25 @@ function Nav() {
         Home
         </a>
       <a className="navbar-brand" href="/app">
-        Application
+        App
+      </a>
+      <a className="navbar-brand" href="/app/search">
+        Search
+      </a>
+      <a className="navbar-brand" href="/app/browse">
+        Browse
+      </a>
+      <a className="navbar-brand" href="/app/customer">
+        Customer
+      </a>
+      <a className="navbar-brand" href="/app/vehicle">
+        Vehicle
+      </a>
+      <a className="navbar-brand" href="/app/transaction">
+        Transaction
+      </a>
+      <a className="navbar-brand" href="/app/report">
+        Report
       </a>
     </nav>
   );
