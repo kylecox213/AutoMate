@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 import API from "../utils/API";
 
-class Login extends React.Component {
+class Register extends React.Component {
 
     state = {
         username: "",
@@ -17,15 +17,17 @@ class Login extends React.Component {
         });
     };
 
-    handleLoginAttempt = event => {
+    handleRegistration = event => {
         event.preventDefault();
         if (!this.state.username || !this.state.password) {
             return;
         }
-        API.login({
+        API.registerAccount({
             username: this.state.username,
             password: this.state.password
-        }).catch(err => console.log(err));
+        })
+            .then(newUser => { API.login(newUser) })
+            .catch(err => console.log(err));
     }
 
     render() {
@@ -33,7 +35,7 @@ class Login extends React.Component {
             <Container fluid>
                 <Row className="max-width: 900px; margin:auto;">
                     <Col size="md-6">
-                        <h1 className="text-center mb-3"><i className="fas fa-sign-in-alt"></i>Login</h1>
+                        <h1 className="text-center mb-3"><i className="fas fa-sign-in-alt"></i>Register</h1>
                         <form className="login">
                             <div className="form-group">
                                 <label htmlFor="username-input">Username</label>
@@ -41,9 +43,9 @@ class Login extends React.Component {
                                 <div className="form-group">
                                     <label htmlFor="password-input">Password</label>
                                     <Input type="password" id="password-input" name="password" className="form-control" onChange={this.handleInputChange} placeholder="Enter Password" required />
-                                    <FormBtn type="button" className="btn btn-block" onClick={this.handleLoginAttempt}>Login</FormBtn>
+                                    <FormBtn type="submit" className="btn btn-block" onClick={this.handleRegistration}>Register</FormBtn>
                                     <p className="lead mt-4">
-                                        No Account? <a href="/register">Register</a>.
+                                        Already have an account? <a href="/">Login</a>.
                                     </p>
                                 </div>
                             </div>
@@ -59,4 +61,4 @@ class Login extends React.Component {
 
 }
 
-export default Login;
+export default Register;
