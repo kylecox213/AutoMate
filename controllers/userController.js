@@ -20,6 +20,8 @@ module.exports = {
     // Commented out for testing
     // ------------------------------------------------------------
     create: function (req, res) {
+        console.log("Session:");
+        console.log(req.session);
         console.log("User registration request with the following credentials:");
         console.log(req.body);
         // On request to create a new user, first check to see if an existing user already has that name
@@ -37,7 +39,11 @@ module.exports = {
                 else {
                     db.User.create(req.body)
                         // After creating the new user, return it
-                        .then(newUser => { return newUser })
+                        .then(newUser => {
+                            req.session.username = newUser.username;
+                            console.log("Updated session");
+                            console.log(req.session);
+                        })
                         // And then redirect the user through the login route to be authenticated and logged in
                         .then(res.redirect("/api/users/login"))
                         // If there's an error, send it to the client
@@ -74,7 +80,7 @@ module.exports = {
     // ------------------------------------------------------------
     // Commented out for testing
     // ------------------------------------------------------------
-    login: function (req, res, next) {
+    login: function (req, res) {
         console.log("User login request with the following credentials:");
         console.log(req.body);
         // User passport to authenticate the user based on the POST body

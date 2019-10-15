@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Set up session to keep track of user login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "boondoggle", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
