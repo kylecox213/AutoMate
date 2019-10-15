@@ -85,7 +85,7 @@ module.exports = {
         console.log(req.body);
         // User passport to authenticate the user based on the POST body
         passport.authenticate("local");
-        console.log("Successful login.")
+        console.log("Successful login.");
     },
     // When the logout route is requested...
     logout: function (req, res) {
