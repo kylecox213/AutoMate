@@ -10,7 +10,7 @@ module.exports = {
     },
     findById: function (req, res) {
         db.Report
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(report => res.json(report))
             .catch(err => res.status(422).json(err));
     },

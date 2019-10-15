@@ -10,7 +10,7 @@ module.exports = {
     },
     findById: function (req, res) {
         db.Customer
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(customer => res.json(customer))
             .catch(err => res.status(422).json(err));
     },
@@ -34,21 +34,21 @@ module.exports = {
     },
     pullTransactions: function (req, res) {
         db.Customer
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(customer => customer.getTransactions())
             .then(transactions => res.send(transactions))
             .catch(err => res.status(422).json(err));
     },
     pullVehicles: function (req, res) {
         db.Customer
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(customer => customer.getVehicles())
             .then(vehicles => res.send(vehicles))
             .catch(err => res.status(422).json(err));
     },
     pullRelatives: function (req, res) {
         db.Customer
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(customer => customer.getCustomers())
             .then(relatives => res.send(relatives))
             .catch(err => res.status(422).json(err));

@@ -22,7 +22,7 @@ class Login extends React.Component {
         if (!this.state.username || !this.state.password) {
             return;
         }
-        API.login({
+        API.userLogin({
             username: this.state.username,
             password: this.state.password
         }).catch(err => console.log(err));

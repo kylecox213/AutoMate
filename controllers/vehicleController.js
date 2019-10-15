@@ -10,7 +10,7 @@ module.exports = {
     },
     findById: function (req, res) {
         db.Vehicle
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(vehicle => res.json(vehicle))
             .catch(err => res.status(422).json(err));
     },
@@ -34,7 +34,7 @@ module.exports = {
     },
     pullTransactions: function (req, res) {
         db.Vehicle
-            .findById(req.params.id)
+            .findByPk(req.params.id)
             .then(vehicle => vehicle.getTransactions())
             .then(transactions => res.send(transactions))
             .catch(err => res.status(422).json(err));
