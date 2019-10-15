@@ -1,6 +1,26 @@
 import axios from "axios";
 
 export default {
+
+  // -------------------------------------- //
+  // USER ROUTES
+  // -------------------------------------- //
+
+  // REGISTER new account
+  registerAccount: function(accountData) {
+    return axios.post("/account/register", accountData)
+  },
+  // LOGIN to account
+  login: function(accountData) {
+    return axios.post("/account/login", accountData)
+  },
+  // LOGOUT from account
+  logout: function() {
+    return axios.get("/account/logout")
+  },
+
+
+
   // -------------------------------------- //
   // USER ROUTES
   // -------------------------------------- //
@@ -13,10 +33,13 @@ export default {
   getThisUser: function (id) {
     return axios.get("/api/users/" + id);
   },
-  // POST to add a new User to the database
-  addNewUser: function (userData) {
-    return axios.post("/api/users/register", userData)
-  },
+  // ------------------------------------------------------------
+  // Commented out for testing
+  // ------------------------------------------------------------
+  // // POST to add a new User to the database
+  // addNewUser: function (userData) {
+  //   return axios.post("/api/users/register", userData)
+  // },
   // UPDATE a User with the given id
   updateThisUser: function (id, UserData) {
     return axios.put("/api/users/" + id, UserData)
@@ -25,14 +48,17 @@ export default {
   deleteThisUser: function (id) {
     return axios.delete("api/users/" + id);
   },
-  // POST to log User into the application
-  userLogin: function (userData) {
-    return axios.post("/api/users/login", userData);
-  },
-  // GET to log User out of the application
-  userLogout: function () {
-    return axios.get("/api/users/logout");
-  },
+  // ------------------------------------------------------------
+  // Commented out for testing
+  // ------------------------------------------------------------
+  // // POST to log User into the application
+  // userLogin: function (userData) {
+  //   return axios.post("/api/users/login", userData);
+  // },
+  // // GET to log User out of the application
+  // userLogout: function () {
+  //   return axios.get("/api/users/logout");
+  // },
   // GET all Transactions for the User with the given id
   getUserTransactions: function (id) {
     return axios.get("/api/users/" + id + "/transactions");
