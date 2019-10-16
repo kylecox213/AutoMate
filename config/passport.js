@@ -13,10 +13,13 @@ passport.use(new LocalStrategy({
             }
         }).then(function(dbUser) {
             if (!dbUser) {
+                console.log("We're here");
+                throw new Error ("No account associated with that username.")
                 return done(null, false, {
                     message: "Incorrect email."
                 });
             } else if (!dbUser.validPassword(password)) {
+                throw new Error ("Incorrect password.")
                 return done(null, false, {
                     message: "Incorrect password."
                 });

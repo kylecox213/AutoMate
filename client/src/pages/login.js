@@ -10,6 +10,10 @@ class Login extends React.Component {
         password: ""
     }
 
+    presentError = err =>   {
+        
+    }
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -25,7 +29,10 @@ class Login extends React.Component {
         API.userLogin({
             username: this.state.username,
             password: this.state.password
-        }).catch(err => console.log(err));
+        }).catch(err => {
+            console.log(err);
+            this.presentError(err);
+        });
     };
 
     render() {
