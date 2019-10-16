@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const passport = require("../../config/passport");
 const userController = require("../../controllers/userController");
+const passport = require("../../config/passport")
 
 // Matches with "/api/users"
 router.route("/")
