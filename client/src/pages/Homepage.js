@@ -122,6 +122,16 @@ class Homepage extends React.Component {
                   />
                 </Col>
               </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-10" />
+                <Col size="sm-2">
+                  <FormBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleAdd}
+                    >Add Customer</FormBtn>
+                </Col>
+              </div>
             </form>
           </Col>
           <Col size="md-1" />
