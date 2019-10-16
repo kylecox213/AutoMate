@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const passport = require("../../config/passport");
 const userController = require("../../controllers/userController");
 
 // Matches with "/api/users"
@@ -17,7 +18,7 @@ router.route("/register")
 
 // Matches with "/api/users/login"
 router.route("/login")
-    .post(userController.login);
+    .post(passport.authenticate('local'), userController.login);
 
 // Matches with "/api/users/logout"
 router.route("/logout")
