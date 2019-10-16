@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Homepage from "./pages/Homepage";
 import Customer from "./pages/customer";
 import Vehicle from "./pages/Vehicle";
 import Transaction from "./pages/Transaction";
-import Browse from "./pages/browse";
+import Browse from "./pages/Browse";
 import Search from "./pages/Search";
-import Report from "./pages/report";
+import Report from "./pages/Report";
 import Nav from "./components/Nav";
 
 function App() {
