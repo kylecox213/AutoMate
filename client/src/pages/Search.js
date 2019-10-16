@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import { Radio, Input, FormBtn } from "../../components/Form";
+import { Col, Row, Container } from "../components/Grid";
+import { Radio, Input, FormBtn } from "../components/Form";
 
 class Search extends React.Component {
 

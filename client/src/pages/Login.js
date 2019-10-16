@@ -1,7 +1,7 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import { Input, FormBtn } from "../../components/Form";
-import API from "../../utils/API";
+import { Col, Row, Container } from "../components/Grid";
+import { Input, FormBtn } from "../components/Form";
+import API from "../utils/API";
 
 class Login extends React.Component {
 
