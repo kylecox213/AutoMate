@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Homepage from "./pages/Homepage";
-import Customer from "./pages/Customer";
+import Customer from "./pages/customer";
 import Vehicle from "./pages/Vehicle";
 import Transaction from "./pages/Transaction";
 import Browse from "./pages/Browse";
