@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 function Table(props) {
 
     function formatHeader(string) {
         let targIndex = string.indexOf(string.match(/[A-Z]{1}/));
-        if (targIndex > -1) {
+        if (targIndex > 0) {
             let wordArray = [];
             wordArray.push(string.slice(0, targIndex));
             wordArray.push(string.slice(targIndex, (string.length)));
@@ -35,26 +37,28 @@ function Table(props) {
 
     if (tableHeaders.length) {
         return (
-            <table>
-                <thead>
+            <table className="table table-striped">
+                <thead className="thead-dark">
                     <tr>
                         {tableHeaders.map(header => {
-                            return (<th>{header}</th>)
+                            return (<th key={`col-${header}`} scope="col">{header}</th>)
                         })}
                     </tr>
                 </thead>
                 <tbody>
                     {props.data.map(dataRow => {
                         return (
-                            <tr>
+                            <tr key={dataRow.id}>
                                 {props.heads.map(header => {
-                                    return (<td>{dataRow[header]}</td>)
+                                    return (<td key={dataRow.id + "-" + header}>
+                                        <Link to={`/app/${props.pathType}/${dataRow.id}`}>{dataRow[header]}</Link>
+                                    </td>)
                                 })}
                             </tr>
                         )
                     })}
                 </tbody>
-            </table>
+            </table >
         );
     } else return (<div></div>)
 }
