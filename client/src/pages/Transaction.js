@@ -21,6 +21,7 @@ class Transaction extends React.Component {
     year: "",
     color: "",
     plateNumber: "",
+    odometer: "",
     vin: "",
     date: "",
     parts: "",
@@ -316,7 +317,6 @@ class Transaction extends React.Component {
                 >Print Invoice</GenBtn>
               </Col>
             </div>
-
           </Col>
           <Col size="md-1" />
         </Row>
