@@ -2,6 +2,8 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { Radio, Input, FormBtn } from "../components/Form";
 import Table from "../components/Table";
+// import SortableTable1 from "../components/SortableTable1";
+
 
 class Search extends React.Component {
 
@@ -14,7 +16,7 @@ class Search extends React.Component {
     model: "",
     year: "",
     plateNumber: "",
-    tableHeads: "",
+    tableHeads: ["Column1", "Column2"],
     tableData: [
       {
         id: 1,
@@ -47,7 +49,7 @@ class Search extends React.Component {
 
   setSearchType = event => {
     const { value } = event.target;
-    let headArray = value === "customer" ? ["firstName", "lastName", "phone"] : ["make", "model", "year", "plateNumber"];
+    let headArray = value === "customer" ? ["id", "firstName", "lastName", "phone"] : ["id", "make", "model", "year", "plateNumber"];
     this.setState({
       searchType: value,
       tableHeads: headArray
