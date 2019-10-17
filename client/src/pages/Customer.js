@@ -240,6 +240,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
+                <Col size="sm-1" />
                 <Col size="sm-2">
                   <EditBtn
                     type="submit"
