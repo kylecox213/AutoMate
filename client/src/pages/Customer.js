@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
+
 import {Input, FormBtn, EditBtn } from "../components/Form";
+
 
 class Customer extends React.Component {
 
@@ -45,7 +47,9 @@ class Customer extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
+
               <Col size="sm-4">
+
                   <Input
                     type="input"
                     name="firstName"
@@ -66,6 +70,7 @@ class Customer extends React.Component {
                   />
                 </Col>
                 <Col size="sm-4">
+
                   <Input
                     type="input"
                     name="lastName"
