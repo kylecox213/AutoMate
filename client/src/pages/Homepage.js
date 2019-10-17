@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import {Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, FormBtn, EditBtn } from "../components/Form";
 
 class Homepage extends React.Component {
 
@@ -45,7 +45,7 @@ class Homepage extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-4">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="firstName"
@@ -75,8 +75,8 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                </div>
-                <div className="form-row" style={{ marginTop: "30px" }}>
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-8">
                   <Input
                     type="input"
@@ -153,7 +153,7 @@ class Homepage extends React.Component {
             </form>
             <form>
               <div className="form-row" style={{ marginTop: "70px" }}>
-              <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="make"
@@ -163,7 +163,7 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="model"
@@ -173,7 +173,7 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="year"
@@ -183,7 +183,9 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="color"
@@ -193,7 +195,7 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="plateNumber"
@@ -203,7 +205,7 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-3">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="vin"
@@ -213,15 +215,12 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-10" />
                 <Col size="sm-2">
-                  <FormBtn
+                  <EditBtn
                     type="submit"
                     className="btn btn-block"
-                    onClick={this.handleAdd}
-                    >Add Customer</FormBtn>
+                    onClick={this.handleInputChange}
+                  >Edit Vehicle</EditBtn>
                 </Col>
               </div>
             </form>

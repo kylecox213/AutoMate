@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, FormBtn, EditBtn, GenBtn } from "../components/Form";
 
 class Transaction extends React.Component {
 
@@ -49,86 +49,6 @@ class Transaction extends React.Component {
         <Row>
           <Col size="md-1" />
           <Col size="md-10" style={{ marginBottom: "50px" }}>
-            <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-2">
-                  <Input
-                    type="input"
-                    name="make"
-                    id="inputMake"
-                    label="Make"
-                    placeholder="Make"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-2">
-                  <Input
-                    type="input"
-                    name="model"
-                    id="inputModel"
-                    label="Model"
-                    placeholder="Model"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-1">
-                  <Input
-                    type="input"
-                    name="year"
-                    id="inputYear"
-                    label="Year"
-                    placeholder="Year"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-2">
-                  <Input
-                    type="input"
-                    name="color"
-                    id="inputColor"
-                    label="Color"
-                    placeholder="Color"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-2">
-                  <Input
-                    type="input"
-                    name="plateNumber"
-                    id="inputPlateNumber"
-                    label="Plate Number"
-                    placeholder="Plate Number"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-3">
-                  <Input
-                    type="input"
-                    name="vin"
-                    id="inputVin"
-                    label="VIN"
-                    placeholder="VIN"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-10" />
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
-                </Col>
-
-              </div>
-            </form>
-            <Row>
-              <Col size="md-12">
-                <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer:</h1>
-              </Col>
-            </Row>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-4">
@@ -240,10 +160,163 @@ class Transaction extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
+                  >Edit Customer</EditBtn>
                 </Col>
               </div>
             </form>
+            <form>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="make"
+                    id="inputMake"
+                    label="Make"
+                    placeholder="Make"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="model"
+                    id="inputModel"
+                    label="Model"
+                    placeholder="Model"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="year"
+                    id="inputYear"
+                    label="Year"
+                    placeholder="Year"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="color"
+                    id="inputColor"
+                    label="Color"
+                    placeholder="Color"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="plateNumber"
+                    id="inputPlateNumber"
+                    label="Plate Number"
+                    placeholder="Plate Number"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="vin"
+                    id="inputVin"
+                    label="VIN"
+                    placeholder="VIN"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <EditBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleInputChange}
+                  >Edit Vehicle</EditBtn>
+                </Col>
+              </div>
+            </form>
+            <form>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="date"
+                    id="inputDate"
+                    label="Date"
+                    placeholder="Date"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-4">
+                  <Input
+                    type="input"
+                    name="parts"
+                    id="inputParts"
+                    label="Parts"
+                    placeholder="Parts"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="labor"
+                    id="inputLabor"
+                    label="Labor"
+                    placeholder="Labor"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="total"
+                    id="inputTotal"
+                    label="Total"
+                    placeholder="Total"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-1">
+                  <Input
+                    type="input"
+                    name="tax"
+                    id="inputTax"
+                    label="Tax"
+                    placeholder="Tax"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="grandTotal"
+                    id="grandTotal"
+                    label="Grand Total"
+                    placeholder="Grand Total"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <EditBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleInputChange}
+                  >Edit Transaction</EditBtn>
+                </Col>
+              </div>
+            </form>
+            <div className="form-row" style={{ marginBottom: "15px" }}>
+              <Col size="sm-10" />
+              <Col size="sm-2">
+                <GenBtn
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >Print Invoice</GenBtn>
+              </Col>
+            </div>
+
           </Col>
           <Col size="md-1" />
         </Row>
