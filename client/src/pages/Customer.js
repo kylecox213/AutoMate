@@ -154,7 +154,7 @@ class Customer extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
+                  >Edit Customer</EditBtn>
                 </Col>
               </div>
             </form>
@@ -246,7 +246,7 @@ class Customer extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
+                  >Edit Vehicle</EditBtn>
                 </Col>
               </div>
 
