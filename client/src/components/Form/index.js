@@ -11,7 +11,7 @@ export function Input(props) {
   );
 }
 
-export function Radio(props)  {
+export function Radio(props) {
   return (
     <div className="form-check">
       <input className="form-check-input" type="radio" {...props} />
@@ -47,7 +47,7 @@ export function EditBtn(props) {
 
 export function GenBtn(props) {
   return (
-    <button {...props} style={{  marginTop: 30 }} className="btn btn-info">
+    <button {...props} style={{ marginTop: 30 }} className="btn btn-info">
       {props.children}
     </button>
   );

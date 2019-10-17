@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import {Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, FormBtn, EditBtn } from "../components/Form";
 
 class Homepage extends React.Component {
 
@@ -45,7 +45,7 @@ class Homepage extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-4">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="firstName"
@@ -75,8 +75,8 @@ class Homepage extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                </div>
-                <div className="form-row" style={{ marginTop: "30px" }}>
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-8">
                   <Input
                     type="input"
@@ -152,7 +152,7 @@ class Homepage extends React.Component {
               </div>
             </form>
             <form>
-            <div className="form-row" style={{ marginTop: "70px" }}>
+              <div className="form-row" style={{ marginTop: "70px" }}>
                 <Col size="sm-4">
                   <Input
                     type="input"

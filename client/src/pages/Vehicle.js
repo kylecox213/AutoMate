@@ -45,7 +45,7 @@ class Vehicle extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="make"
@@ -55,7 +55,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="model"
@@ -65,7 +65,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="year"
@@ -75,7 +75,9 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1">
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="color"
@@ -85,7 +87,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="plateNumber"
@@ -95,7 +97,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="vin"
