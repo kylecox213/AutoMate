@@ -6,7 +6,7 @@ function Table(props) {
 
     function formatHeader(string) {
         let targIndex = string.indexOf(string.match(/[A-Z]{1}/));
-        if (targIndex > -1) {
+        if (targIndex > 0) {
             let wordArray = [];
             wordArray.push(string.slice(0, targIndex));
             wordArray.push(string.slice(targIndex, (string.length)));
