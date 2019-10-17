@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, EditBtn, GenBtn } from "../components/Form";
+import { Input, OjBtn, BlueBtn } from "../components/Form";
 
 class Transaction extends React.Component {
 
@@ -156,11 +156,11 @@ class Transaction extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Customer</EditBtn>
+                  >Edit Customer</OjBtn>
                 </Col>
               </div>
             </form>
@@ -227,11 +227,11 @@ class Transaction extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
+                  >Edit Vehicle</OjBtn>
                 </Col>
               </div>
             </form>
@@ -298,22 +298,22 @@ class Transaction extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Transaction</EditBtn>
+                  >Edit Transaction</OjBtn>
                 </Col>
               </div>
             </form>
             <div className="form-row" style={{ marginBottom: "15px" }}>
               <Col size="sm-10" />
               <Col size="sm-2">
-                <GenBtn
+                <BlueBtn
                   type="submit"
                   className="btn btn-block"
                   onClick={this.handleInputChange}
-                >Print Invoice</GenBtn>
+                >Print Invoice</BlueBtn>
               </Col>
             </div>
 

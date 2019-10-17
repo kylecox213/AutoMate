@@ -28,7 +28,7 @@ export function TextArea(props) {
   );
 }
 
-export function FormBtn(props) {
+export function RedBtn(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-danger">
       {props.children}
@@ -37,17 +37,17 @@ export function FormBtn(props) {
 }
 
 
-export function EditBtn(props) {
+export function OjBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginTop: 30 }} className="btn btn-danger">
+    <button {...props} style={{ display: "block", clear: "both", margin: "30px auto 0" }} className="btn btn-danger">
       {props.children}
     </button>
   );
 }
 
-export function GenBtn(props) {
+export function BlueBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginTop: 30 }} className="btn btn-info">
+    <button {...props} style={{ display: "block", clear: "both", margin: "30px auto 0" }} className="btn btn-info">
       {props.children}
     </button>
   );

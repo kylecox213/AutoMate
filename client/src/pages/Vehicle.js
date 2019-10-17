@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, OjBtn } from "../components/Form";
 
 class Vehicle extends React.Component {
 
@@ -108,11 +108,11 @@ class Vehicle extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
+                  >Edit Vehicle</OjBtn>
                 </Col>
               </div>
             </form>
@@ -223,11 +223,11 @@ class Vehicle extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Customer</EditBtn>
+                  >Edit Customer</OjBtn>
                 </Col>
               </div>
             </form>

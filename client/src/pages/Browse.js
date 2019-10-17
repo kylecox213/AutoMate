@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Table from "../components/Table";
-import { FormBtn } from "../components/Form";
+import { OjBtn } from "../components/Form";
 
 class Browse extends React.Component {
 
@@ -31,22 +31,22 @@ class Browse extends React.Component {
         </Row>
         <Row>
           <Col size="4">
-            <FormBtn
+            <OjBtn
               value="customer"
               onClick={this.setFilter}
-              >Customers</FormBtn>
+              >Customers</OjBtn>
           </Col>
           <Col size="4">
-            <FormBtn
+            <OjBtn
               value="vehicle"
               onClick={this.setFilter}
-            >Vehicles</FormBtn>
+            >Vehicles</OjBtn>
           </Col>
           <Col size="4">
-            <FormBtn
+            <OjBtn
               value="transaction"
               onClick={this.setFilter}
-            >Transactions</FormBtn>
+            >Transactions</OjBtn>
           </Col>
         </Row>
         <Row>
