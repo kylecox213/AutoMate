@@ -158,24 +158,6 @@ class Customer extends React.Component {
                 </Col>
               </div>
             </form>
-            <Row>
-              <Col size="sm-2">
-                <GenBtn
-                  type="submit"
-                  className="btn btn-block"
-                  onClick={this.handleInputChange}
-                >View Transactions</GenBtn>
-              </Col>
-              <Col size="sm-1" />
-              <Col size="sm-2">
-                <GenBtn
-                  type="submit"
-                  className="btn btn-block"
-                  onClick={this.handleInputChange}
-                >Add Transactions Information</GenBtn>
-              </Col>
-              <Col size="sm-7" />
-            </Row>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-4">
@@ -230,7 +212,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-3">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="vin"
@@ -240,7 +222,6 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1" />
                 <Col size="sm-2">
                   <EditBtn
                     type="submit"
@@ -249,8 +230,26 @@ class Customer extends React.Component {
                   >Edit Vehicle</EditBtn>
                 </Col>
               </div>
-
             </form>
+            <Row>
+              <Col size="sm-8" />
+              <Col size="sm-2">
+                <GenBtn
+                  style="float: left"
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >View Transactions</GenBtn>
+              </Col>
+              <Col size="sm-2">
+                <GenBtn
+                  style="float: right"
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >Add Transaction</GenBtn>
+              </Col>
+            </Row>
           </Col>
           <Col size="md-1" />
         </Row>

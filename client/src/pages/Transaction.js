@@ -126,7 +126,7 @@ class Transaction extends React.Component {
             </form>
             <Row>
               <Col size="md-12">
-                <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer:</h1>
+                <h1 style={{ textAlign: "center", marginTop: "30px auto" }}>Customer:</h1>
               </Col>
             </Row>
             <form>

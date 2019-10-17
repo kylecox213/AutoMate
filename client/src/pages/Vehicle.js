@@ -75,7 +75,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="color"
@@ -95,7 +95,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-3">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="vin"
@@ -105,26 +105,17 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-10" />
                 <Col size="sm-2">
                   <EditBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
+                  >Edit Vehicle</EditBtn>
                 </Col>
-
               </div>
             </form>
-            <Row>
-              <Col size="md-12">
-                <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer:</h1>
-              </Col>
-            </Row>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row" style={{ marginTop: "70px" }}>
                 <Col size="sm-4">
                   <Input
                     type="input"
@@ -234,7 +225,7 @@ class Vehicle extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Information</EditBtn>
+                  >Edit Customer</EditBtn>
                 </Col>
               </div>
             </form>
