@@ -47,7 +47,7 @@ export function EditBtn(props) {
 
 export function GenBtn(props) {
   return (
-    <button {...props} style={{ marginTop: 30 }} className="btn btn-info">
+    <button {...props} style={{ float: "right", marginTop: 30 }} className="btn btn-info">
       {props.children}
     </button>
   );
