@@ -37,7 +37,7 @@ function Table(props) {
 
     if (tableHeaders.length) {
         return (
-            <table className="table table-striped sortable">
+            <table className="table table-striped">
                 <thead className="thead-dark">
                     <tr>
                         {tableHeaders.map(header => {
