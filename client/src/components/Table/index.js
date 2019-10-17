@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 function Table(props) {
 
@@ -36,8 +37,8 @@ function Table(props) {
 
     if (tableHeaders.length) {
         return (
-            <table className="table">
-                <thead>
+            <table className="table table-striped sortable">
+                <thead className="thead-dark">
                     <tr>
                         {tableHeaders.map(header => {
                             return (<th key={`col-${header}`} scope="col">{header}</th>)

@@ -27,6 +27,13 @@ class Search extends React.Component {
         firstName: "Alex",
         lastName: "Cox",
         phone: "(804) 691-0146"
+      },
+      {
+        id: 3,
+        make: "Honda",
+        model: "Civic",
+        year: 1999,
+        plateNumber: "XYZ-7400"
       }
     ]
   }
@@ -166,15 +173,15 @@ class Search extends React.Component {
           <Col size="md-1" />
         </Row>
         <Row>
-          <Col size="md-1" />
-          <Col size="md-10">
+          <Col size="md-2" />
+          <Col size="md-8">
             <Table
               heads={this.state.tableHeads}
               data={this.state.tableData}
               pathType={this.state.searchType}
             />
           </Col>
-          <Col size="md-1" />
+          <Col size="md-2" />
         </Row>
       </Container >
     )
