@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Table(props) {
 
@@ -35,26 +36,28 @@ function Table(props) {
 
     if (tableHeaders.length) {
         return (
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         {tableHeaders.map(header => {
-                            return (<th>{header}</th>)
+                            return (<th key={`col-${header}`} scope="col">{header}</th>)
                         })}
                     </tr>
                 </thead>
                 <tbody>
                     {props.data.map(dataRow => {
                         return (
-                            <tr>
+                            <tr key={dataRow.id}>
                                 {props.heads.map(header => {
-                                    return (<td>{dataRow[header]}</td>)
+                                    return (<td key={dataRow.id + "-" + header}>
+                                        <Link to={`/app/${props.pathType}/${dataRow.id}`}>{dataRow[header]}</Link>
+                                    </td>)
                                 })}
                             </tr>
                         )
                     })}
                 </tbody>
-            </table>
+            </table >
         );
     } else return (<div></div>)
 }
