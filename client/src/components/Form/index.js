@@ -35,3 +35,11 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function EditBtn(props) {
+  return (
+    <button {...props} style={{ float: "right", marginTop: 30 }} className="btn btn-danger">
+      {props.children}
+    </button>
+  );
+}
