@@ -220,7 +220,7 @@ class Homepage extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
+                  >Add Customer</EditBtn>
                 </Col>
               </div>
             </form>
