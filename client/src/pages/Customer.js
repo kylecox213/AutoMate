@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import {Input, FormBtn } from "../components/Form";
+import {Input, EditBtn, FormBtn } from "../components/Form";
 
 class Customer extends React.Component {
 
@@ -33,7 +33,7 @@ class Customer extends React.Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "50px auto" }}>Customer Information</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer Information</h1>
           </Col>
         </Row>
         <Row>
@@ -41,7 +41,7 @@ class Customer extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-5">
+              <Col size="sm-6">
                   <Input
                     type="input"
                     name="firstName"
@@ -51,7 +51,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-5">
+                <Col size="sm-6">
                   <Input
                     type="input"
                     name="lastName"
@@ -61,16 +61,9 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
-                  <FormBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
-                </Col>
                 </div>
                 <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-5">
+                <Col size="sm-6">
                   <Input
                     type="input"
                     name="address"
@@ -80,7 +73,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-5">
+                <Col size="sm-6">
                   <Input
                     type="input"
                     name="unit"
@@ -89,13 +82,6 @@ class Customer extends React.Component {
                     placeholder="Apt./Unit"
                     onChange={this.handleInputChange}
                   />
-                </Col>
-                <Col size="sm-2">
-                  <FormBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
                 </Col>
               </div>
               <div className="form-row" style={{ marginTop: "30px" }}>
@@ -140,17 +126,17 @@ class Customer extends React.Component {
                   />
                 </Col>
                 <Col size="sm-2">
-                  <FormBtn
+                  <EditBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
+                    >Edit Information</EditBtn>
                 </Col>
               </div>
               </form>
               <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "50px auto" }}>Vehicles:</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicles:</h1>
           </Col>
         </Row>
               <form>
