@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { Radio, Input, FormBtn } from "../components/Form";
+import Table from "../components/Table";
 
 class Search extends React.Component {
 
@@ -12,7 +13,15 @@ class Search extends React.Component {
     make: "",
     model: "",
     year: "",
-    plateNumber: ""
+    plateNumber: "",
+    tableHeads: ["firstName", "lastName", "city"],
+    tableData: [
+      {
+        firstName: "Dylan",
+        lastName: "Vavra",
+        city: "Richmond"
+      }
+    ]
   }
 
   handleInputChange = event => {
@@ -139,6 +148,14 @@ class Search extends React.Component {
             </form>
           </Col>
           <Col size="md-1" />
+        </Row>
+        <Row>
+          <Col size="12">
+            <Table
+              heads={this.state.tableHeads}
+              data={this.state.tableData}
+            />
+          </Col>
         </Row>
       </Container >
     )
