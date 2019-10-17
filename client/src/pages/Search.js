@@ -14,12 +14,26 @@ class Search extends React.Component {
     model: "",
     year: "",
     plateNumber: "",
-    tableHeads: ["firstName", "lastName", "city"],
+    tableHeads: "",
     tableData: [
       {
+        id: 1,
         firstName: "Dylan",
         lastName: "Vavra",
-        city: "Richmond"
+        phone: "(804) 258-3249"
+      },
+      {
+        id: 2,
+        firstName: "Alex",
+        lastName: "Cox",
+        phone: "(804) 691-0146"
+      },
+      {
+        id: 3,
+        make: "Honda",
+        model: "Civic",
+        year: 1999,
+        plateNumber: "XYZ-7400"
       }
     ]
   }
@@ -30,6 +44,15 @@ class Search extends React.Component {
       [name]: value
     });
   };
+
+  setSearchType = event => {
+    const { value } = event.target;
+    let headArray = value === "customer" ? ["firstName", "lastName", "phone"] : ["make", "model", "year", "plateNumber"];
+    this.setState({
+      searchType: value,
+      tableHeads: headArray
+    });
+  }
 
 
   render() {
@@ -55,14 +78,14 @@ class Search extends React.Component {
                 id="customerRadio"
                 value="customer"
                 label="Customer"
-                onClick={this.handleInputChange}
+                onClick={this.setSearchType}
               />
               <Radio
                 name="searchType"
                 id="vehicleRadio"
                 value="vehicle"
                 label="Vehicle"
-                onClick={this.handleInputChange}
+                onClick={this.setSearchType}
               />
               <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-4">
@@ -150,12 +173,15 @@ class Search extends React.Component {
           <Col size="md-1" />
         </Row>
         <Row>
-          <Col size="12">
+          <Col size="md-2" />
+          <Col size="md-8">
             <Table
               heads={this.state.tableHeads}
               data={this.state.tableData}
+              pathType={this.state.searchType}
             />
           </Col>
+          <Col size="md-2" />
         </Row>
       </Container >
     )

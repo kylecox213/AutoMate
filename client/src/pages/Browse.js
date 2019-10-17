@@ -1,19 +1,68 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import Table from "../components/Table";
+import { FormBtn } from "../components/Form";
 
-function Browse() {
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Jumbotron>
-            <h1>Browsing Page</h1>
-          </Jumbotron>
-        </Col>
-      </Row>
-    </Container>
-  );
+class Browse extends React.Component {
+
+  state = {
+    filter: "",
+    tableHeads: "",
+    tableData: []
+  }
+
+  setFilter = event => {
+    const { value } = event.target;
+    let headArray = value === "customer" ? ["firstName", "lastName", "phone"] : value === "vehicle" ? ["make", "model", "year", "plateNumber"] : ["date", "totalPrice", "CustomerId"];
+    this.setState({
+      filter: value,
+      tableHeads: headArray
+    });
+  }
+
+  render() {
+
+    return (
+      <Container fluid>
+        <Row>
+          <Col size="md-12">
+            <h1 style={{ textAlign: "center", margin: "50px auto" }}>Filter Options</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="4">
+            <FormBtn
+              value="customer"
+              onClick={this.setFilter}
+              >Customers</FormBtn>
+          </Col>
+          <Col size="4">
+            <FormBtn
+              value="vehicle"
+              onClick={this.setFilter}
+            >Vehicles</FormBtn>
+          </Col>
+          <Col size="4">
+            <FormBtn
+              value="transaction"
+              onClick={this.setFilter}
+            >Transactions</FormBtn>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-2" />
+          <Col size="md-8">
+            <Table
+              heads={this.state.tableHeads}
+              data={this.state.tableData}
+              pathType={this.state.filter}
+            />
+          </Col>
+          <Col size="md-2" />
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default Browse;
