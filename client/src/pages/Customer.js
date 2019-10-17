@@ -176,11 +176,6 @@ class Customer extends React.Component {
               </Col>
               <Col size="sm-7" />
             </Row>
-            <Row>
-              <Col size="md-12">
-                <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicles:</h1>
-              </Col>
-            </Row>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-4">
