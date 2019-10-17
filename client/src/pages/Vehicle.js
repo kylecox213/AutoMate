@@ -7,6 +7,7 @@ class Vehicle extends React.Component {
   state = {
     addType: "",
     firstName: "",
+    middleName: "",
     lastName: "",
     address: "",
     unit: "",
@@ -14,10 +15,13 @@ class Vehicle extends React.Component {
     state: "",
     zip: "",
     phone: "",
+    email: "",
     make: "",
     model: "",
     year: "",
-    plateNumber: ""
+    color: "",
+    plateNumber: "",
+    vin: ""
   }
 
   handleInputChange = event => {
@@ -33,7 +37,7 @@ class Vehicle extends React.Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "50px auto" }}>Customer Information</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer Information</h1>
           </Col>
         </Row>
         <Row>
@@ -41,7 +45,7 @@ class Vehicle extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-5">
+              <Col size="sm-4">
                   <Input
                     type="input"
                     name="firstName"
@@ -51,7 +55,17 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-5">
+                <Col size="sm-4">
+                  <Input
+                    type="input"
+                    name="middleName"
+                    id="inputMiddleName"
+                    label="Middle Name"
+                    placeholder="Middle Name"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="lastName"
@@ -61,16 +75,9 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
-                  <FormBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
-                </Col>
                 </div>
                 <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-5">
+                <Col size="sm-6">
                   <Input
                     type="input"
                     name="address"
@@ -80,7 +87,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-5">
+                <Col size="sm-6">
                   <Input
                     type="input"
                     name="unit"
@@ -90,16 +97,9 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
-                  <FormBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
-                </Col>
               </div>
               <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-4">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="city"
@@ -109,7 +109,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="state"
@@ -119,7 +119,7 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="zip"
@@ -139,23 +139,32 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
+                <Col size="sm-4">
+                  <Input
+                    type="input"
+                    name="email"
+                    id="inputEmail"
+                    label="Email"
+                    placeholder="Email"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
                 <Col size="sm-2">
-                  <FormBtn
+                  <EditBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                    >Edit Information</FormBtn>
+                    >Edit Information</EditBtn>
                 </Col>
               </div>
               </form>
               <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "50px auto" }}>Vehicles:</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicles:</h1>
           </Col>
         </Row>
               <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-1" />
               <Col size="sm-2">
                   <Input
                     type="input"
@@ -176,13 +185,23 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="year"
                     id="inputYear"
                     label="Year"
                     placeholder="Year"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-2">
+                  <Input
+                    type="input"
+                    name="color"
+                    id="inputColor"
+                    label="Color"
+                    placeholder="Color"
                     onChange={this.handleInputChange}
                   />
                 </Col>
@@ -196,21 +215,27 @@ class Vehicle extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1">
-                  <FormBtn
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="vin"
+                    id="inputVin"
+                    label="VIN"
+                    placeholder="VIN"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-10" />
+                <Col size="sm-2">
+                  <EditBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                    >Edit</FormBtn>
+                    >Edit Information</EditBtn>
                 </Col>
-                <Col size="sm-1">
-                  <FormBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Add Vehicle</FormBtn>
-                </Col>
-                <Col size="sm-1" />
+
               </div>
             </form>
           </Col>
