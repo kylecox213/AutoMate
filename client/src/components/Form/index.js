@@ -44,3 +44,11 @@ export function EditBtn(props) {
     </button>
   );
 }
+
+export function GenBtn(props) {
+  return (
+    <button {...props} style={{ float: "left", marginBottom: 30 }} className="btn btn-danger">
+      {props.children}
+    </button>
+  );
+}

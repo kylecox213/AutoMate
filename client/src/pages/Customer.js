@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import {Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, FormBtn, EditBtn, GenBtn } from "../components/Form";
 
 class Customer extends React.Component {
 
@@ -45,7 +45,7 @@ class Customer extends React.Component {
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
               <div className="form-row" style={{ marginTop: "30px" }}>
-              <Col size="sm-4">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="firstName"
@@ -75,8 +75,8 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                </div>
-                <div className="form-row" style={{ marginTop: "30px" }}>
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-6">
                   <Input
                     type="input"
@@ -154,18 +154,36 @@ class Customer extends React.Component {
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                    >Edit Information</EditBtn>
+                  >Edit Information</EditBtn>
                 </Col>
               </div>
-              </form>
-              <Row>
-          <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicles:</h1>
-          </Col>
-        </Row>
-              <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+            </form>
+            <Row>
               <Col size="sm-2">
+                <GenBtn
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >View Transactions</GenBtn>
+              </Col>
+              <Col size="sm-1" />
+              <Col size="sm-2">
+                <GenBtn
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >Add Transactions Information</GenBtn>
+              </Col>
+              <Col size="sm-7" />
+            </Row>
+            <Row>
+              <Col size="md-12">
+                <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicles:</h1>
+              </Col>
+            </Row>
+            <form>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="make"
@@ -175,7 +193,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="model"
@@ -185,7 +203,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-1">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="year"
@@ -195,7 +213,9 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+              </div>
+              <div className="form-row" style={{ marginTop: "30px" }}>
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="color"
@@ -205,7 +225,7 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="plateNumber"
@@ -225,32 +245,15 @@ class Customer extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
                 <Col size="sm-2">
                   <EditBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                    >View Transactions</EditBtn>
-                </Col>
-                <Col size="sm-1" />
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Add Transactions Information</EditBtn>
-                </Col>
-                <Col size="sm-5" />
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                    >Edit Information</EditBtn>
+                  >Edit Information</EditBtn>
                 </Col>
               </div>
+
             </form>
           </Col>
           <Col size="md-1" />
