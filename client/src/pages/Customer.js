@@ -227,7 +227,22 @@ class Customer extends React.Component {
                 </Col>
               </div>
               <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-10" />
+                <Col size="sm-2">
+                  <EditBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleInputChange}
+                    >View Transactions</EditBtn>
+                </Col>
+                <Col size="sm-1" />
+                <Col size="sm-2">
+                  <EditBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleInputChange}
+                    >Add Transactions Information</EditBtn>
+                </Col>
+                <Col size="sm-5" />
                 <Col size="sm-2">
                   <EditBtn
                     type="submit"
@@ -235,7 +250,6 @@ class Customer extends React.Component {
                     onClick={this.handleInputChange}
                     >Edit Information</EditBtn>
                 </Col>
-
               </div>
             </form>
           </Col>
