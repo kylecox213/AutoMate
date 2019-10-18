@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import { Input, RedBtn } from "../components/Form";
 import API from "../utils/API";
 
 class Login extends React.Component {
@@ -62,11 +62,11 @@ class Login extends React.Component {
                                 placeholder="Enter Password"
                                 required
                             />
-                            <FormBtn
+                            <RedBtn
                                 type="button"
                                 className="btn btn-block"
                                 onClick={this.handleLoginAttempt}
-                            >Login</FormBtn>
+                            >Login</RedBtn>
                             <p className="lead mt-4">No Account? <a href="/register">Register</a>.</p>
                         </form>
                     </Col>

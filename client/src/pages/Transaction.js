@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, EditBtn, GenBtn } from "../components/Form";
+import { Input, TextArea, OjBtn, BlueBtn } from "../components/Form";
 
 class Transaction extends React.Component {
 
   state = {
+    editTransaction: false,
     addType: "",
     firstName: "",
     middleName: "",
@@ -24,9 +25,9 @@ class Transaction extends React.Component {
     odometer: "",
     vin: "",
     date: "",
-    parts: "",
-    labor: "",
-    total: "",
+    partsPrice: "",
+    laborPrice: "",
+    totalPrice: "",
     tax: "",
     grandTotal: ""
   }
@@ -38,20 +39,137 @@ class Transaction extends React.Component {
     });
   };
 
+  toggleTransactionEdit = (event) => {
+    event.preventDefault();
+    this.setState({
+      editTransaction: !this.state.editTransaction
+    });
+  };
+
 
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Transaction Information</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto 30px" }}>Transaction Information</h1>
           </Col>
         </Row>
         <Row>
           <Col size="md-1" />
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="date"
+                    id="inputDate"
+                    label="Date"
+                    placeholder="Date"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="odometer"
+                    id="odometer"
+                    label="Odometer"
+                    placeholder="Mileage"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <OjBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.toggleTransactionEdit}
+                    children={this.state.editCustomer ? "Save Transaction" : "Edit Transaction"}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <BlueBtn
+                    type="submit"
+                    className="btn btn-block"
+                    onClick={this.handleInputChange}
+                  >Print Invoice</BlueBtn>
+                </Col>
+              </div>
+              <div className="form-row">
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="partsPrice"
+                    id="inputPartsPrice"
+                    label="Parts"
+                    placeholder="Parts"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="laborPrice"
+                    id="inputLaborPrice"
+                    label="Labor"
+                    placeholder="Labor"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="totalPrice"
+                    id="inputTotalPrice"
+                    label="Total Pre-Tax"
+                    placeholder="Total Pre-Tax"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="tax"
+                    id="inputTax"
+                    label="Tax"
+                    placeholder="Tax"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+              </div>
+              <div className="form-row">
+                <Col size="sm-9">
+                  <TextArea
+                    name="parts"
+                    id="parts"
+                    label="Service Description"
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <Input
+                    type="input"
+                    name="grandTotal"
+                    id="grandTotal"
+                    label="Grand Total"
+                    placeholder="Grand Total"
+                    onChange={this.handleInputChange}
+                    disabled={!(this.state.editTransaction)}
+                  />
+                </Col>
+              </div>
+            </form>
+
+            <h3 style={{ marginTop: 30 }}>Customer:</h3>
+            <form>
+              <div className="form-row">
                 <Col size="sm-4">
                   <Input
                     type="input"
@@ -60,6 +178,7 @@ class Transaction extends React.Component {
                     label="First Name"
                     placeholder="First Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -70,6 +189,7 @@ class Transaction extends React.Component {
                     label="Middle Name"
                     placeholder="Middle Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -80,10 +200,11 @@ class Transaction extends React.Component {
                     label="Last Name"
                     placeholder="Last Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-6">
                   <Input
                     type="input"
@@ -92,9 +213,10 @@ class Transaction extends React.Component {
                     label="Street Address"
                     placeholder="Street Address"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
-                <Col size="sm-6">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="unit"
@@ -102,11 +224,10 @@ class Transaction extends React.Component {
                     label="Apt./Unit"
                     placeholder="Apt./Unit"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-2">
+                <Col size="sm-4">
                   <Input
                     type="input"
                     name="city"
@@ -114,8 +235,11 @@ class Transaction extends React.Component {
                     label="City"
                     placeholder="City"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
+              </div>
+              <div className="form-row">
                 <Col size="sm-1">
                   <Input
                     type="input"
@@ -124,9 +248,10 @@ class Transaction extends React.Component {
                     label="State"
                     placeholder="State"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
-                <Col size="sm-1">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="zip"
@@ -134,9 +259,10 @@ class Transaction extends React.Component {
                     label="Zip"
                     placeholder="Zip"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
-                <Col size="sm-2">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="phone"
@@ -144,6 +270,7 @@ class Transaction extends React.Component {
                     label="Phone Number"
                     placeholder="Phone Number"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -154,19 +281,21 @@ class Transaction extends React.Component {
                     label="Email"
                     placeholder="Email"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <BlueBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Customer</EditBtn>
+                  >Full Customer Details</BlueBtn>
                 </Col>
               </div>
             </form>
+            <h3 style={{ marginTop: 30 }}>Vehicle(s):</h3>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-2">
                   <Input
                     type="input"
@@ -175,6 +304,7 @@ class Transaction extends React.Component {
                     label="Make"
                     placeholder="Make"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
@@ -185,6 +315,7 @@ class Transaction extends React.Component {
                     label="Model"
                     placeholder="Model"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-1">
@@ -195,6 +326,7 @@ class Transaction extends React.Component {
                     label="Year"
                     placeholder="Year"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-1">
@@ -205,6 +337,7 @@ class Transaction extends React.Component {
                     label="Color"
                     placeholder="Color"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
@@ -215,6 +348,7 @@ class Transaction extends React.Component {
                     label="Plate Number"
                     placeholder="Plate Number"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
@@ -225,98 +359,11 @@ class Transaction extends React.Component {
                     label="VIN"
                     placeholder="VIN"
                     onChange={this.handleInputChange}
+                    disabled
                   />
-                </Col>
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
                 </Col>
               </div>
             </form>
-            <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-1">
-                  <Input
-                    type="input"
-                    name="date"
-                    id="inputDate"
-                    label="Date"
-                    placeholder="Date"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-4">
-                  <Input
-                    type="input"
-                    name="parts"
-                    id="inputParts"
-                    label="Parts"
-                    placeholder="Parts"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-1">
-                  <Input
-                    type="input"
-                    name="labor"
-                    id="inputLabor"
-                    label="Labor"
-                    placeholder="Labor"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-1">
-                  <Input
-                    type="input"
-                    name="total"
-                    id="inputTotal"
-                    label="Total"
-                    placeholder="Total"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-1">
-                  <Input
-                    type="input"
-                    name="tax"
-                    id="inputTax"
-                    label="Tax"
-                    placeholder="Tax"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-2">
-                  <Input
-                    type="input"
-                    name="grandTotal"
-                    id="grandTotal"
-                    label="Grand Total"
-                    placeholder="Grand Total"
-                    onChange={this.handleInputChange}
-                  />
-                </Col>
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Transaction</EditBtn>
-                </Col>
-              </div>
-            </form>
-            <div className="form-row" style={{ marginBottom: "15px" }}>
-              <Col size="sm-10" />
-              <Col size="sm-2">
-                <GenBtn
-                  type="submit"
-                  className="btn btn-block"
-                  onClick={this.handleInputChange}
-                >Print Invoice</GenBtn>
-              </Col>
-            </div>
           </Col>
           <Col size="md-1" />
         </Row>

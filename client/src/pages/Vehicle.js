@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn, EditBtn } from "../components/Form";
+import { Input, OjBtn, BlueBtn } from "../components/Form";
 
 class Vehicle extends React.Component {
 
   state = {
+    editVehicle: false,
     addType: "",
     firstName: "",
     middleName: "",
@@ -31,20 +32,27 @@ class Vehicle extends React.Component {
     });
   };
 
+  toggleVehicleEdit = (event) => {
+    event.preventDefault();
+    this.setState({
+      editVehicle: !this.state.editVehicle
+    });
+  }
+
 
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Vehicle Information</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto 30px" }}>Vehicle Information</h1>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: 30 }}>
           <Col size="md-1" />
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-4">
                   <Input
                     type="input"
@@ -53,6 +61,7 @@ class Vehicle extends React.Component {
                     label="Make"
                     placeholder="Make"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-4">
@@ -63,6 +72,7 @@ class Vehicle extends React.Component {
                     label="Model"
                     placeholder="Model"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-4">
@@ -73,10 +83,11 @@ class Vehicle extends React.Component {
                     label="Year"
                     placeholder="Year"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-3">
                   <Input
                     type="input"
@@ -85,6 +96,7 @@ class Vehicle extends React.Component {
                     label="Color"
                     placeholder="Color"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-3">
@@ -95,6 +107,7 @@ class Vehicle extends React.Component {
                     label="Plate Number"
                     placeholder="Plate Number"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-4">
@@ -105,19 +118,22 @@ class Vehicle extends React.Component {
                     label="VIN"
                     placeholder="VIN"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
+                    onClick={this.toggleVehicleEdit}
+                    children={this.state.editVehicle ? "Save" : "Edit"}
+                  ></OjBtn>
                 </Col>
               </div>
             </form>
-            <form>
-              <div className="form-row" style={{ marginTop: "70px" }}>
+            <form style={{ marginTop: "30px" }}>
+              <h3>Owner:</h3>
+              <div className="form-row">
                 <Col size="sm-4">
                   <Input
                     type="input"
@@ -126,6 +142,7 @@ class Vehicle extends React.Component {
                     label="First Name"
                     placeholder="First Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -136,6 +153,7 @@ class Vehicle extends React.Component {
                     label="Middle Name"
                     placeholder="Middle Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -146,10 +164,11 @@ class Vehicle extends React.Component {
                     label="Last Name"
                     placeholder="Last Name"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-6">
                   <Input
                     type="input"
@@ -158,6 +177,7 @@ class Vehicle extends React.Component {
                     label="Street Address"
                     placeholder="Street Address"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-6">
@@ -168,10 +188,11 @@ class Vehicle extends React.Component {
                     label="Apt./Unit"
                     placeholder="Apt./Unit"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-2">
                   <Input
                     type="input"
@@ -180,6 +201,7 @@ class Vehicle extends React.Component {
                     label="City"
                     placeholder="City"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-1">
@@ -190,6 +212,7 @@ class Vehicle extends React.Component {
                     label="State"
                     placeholder="State"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-1">
@@ -200,6 +223,7 @@ class Vehicle extends React.Component {
                     label="Zip"
                     placeholder="Zip"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
@@ -210,6 +234,7 @@ class Vehicle extends React.Component {
                     label="Phone Number"
                     placeholder="Phone Number"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-4">
@@ -220,14 +245,15 @@ class Vehicle extends React.Component {
                     label="Email"
                     placeholder="Email"
                     onChange={this.handleInputChange}
+                    disabled
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <BlueBtn
                     type="submit"
                     className="btn btn-block"
                     onClick={this.handleInputChange}
-                  >Edit Customer</EditBtn>
+                  >Full Customer Details</BlueBtn>
                 </Col>
               </div>
             </form>
