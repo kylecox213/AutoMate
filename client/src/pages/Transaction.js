@@ -22,6 +22,7 @@ class Transaction extends React.Component {
     year: "",
     color: "",
     plateNumber: "",
+    odometer: "",
     vin: "",
     date: "",
     partsPrice: "",
