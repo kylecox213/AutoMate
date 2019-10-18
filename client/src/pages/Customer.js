@@ -1,16 +1,13 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-<<<<<<< HEAD
-import { Input, FormBtn, EditBtn, GenBtn } from "../components/Form";
-=======
+import { Input, OjBtn, BlueBtn } from "../components/Form";
 
-import {Input, FormBtn, EditBtn } from "../components/Form";
->>>>>>> 1b60bd668738118426974e779d05a1634b718931
 
 
 class Customer extends React.Component {
 
   state = {
+    edit: "",
     addType: "",
     firstName: "",
     middleName: "",
@@ -37,27 +34,35 @@ class Customer extends React.Component {
     });
   };
 
+  toggleVehicleEdit = (event) => {
+    event.preventDefault();
+    this.setState({
+      editVehicle: !this.state.editVehicle
+    });
+  }
+
+  toggleCustomerEdit = (event) => {
+    event.preventDefault();
+    this.setState({
+      editCustomer: !this.state.editCustomer
+    });
+  }
+
 
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <h1 style={{ textAlign: "center", margin: "10px auto" }}>Customer Information</h1>
+            <h1 style={{ textAlign: "center", margin: "10px auto 30px" }}>Customer Information</h1>
           </Col>
         </Row>
         <Row>
           <Col size="md-1" />
           <Col size="md-10" style={{ marginBottom: "50px" }}>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-<<<<<<< HEAD
-                <Col size="sm-4">
-=======
-
-              <Col size="sm-4">
-
->>>>>>> 1b60bd668738118426974e779d05a1634b718931
+              <div className="form-row">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="firstName"
@@ -65,9 +70,10 @@ class Customer extends React.Component {
                     label="First Name"
                     placeholder="First Name"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
-                <Col size="sm-4">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="middleName"
@@ -75,10 +81,10 @@ class Customer extends React.Component {
                     label="Middle Name"
                     placeholder="Middle Name"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
-                <Col size="sm-4">
-
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="lastName"
@@ -86,10 +92,11 @@ class Customer extends React.Component {
                     label="Last Name"
                     placeholder="Last Name"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-6">
                   <Input
                     type="input"
@@ -98,9 +105,10 @@ class Customer extends React.Component {
                     label="Street Address"
                     placeholder="Street Address"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
-                <Col size="sm-6">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="unit"
@@ -108,10 +116,19 @@ class Customer extends React.Component {
                     label="Apt./Unit"
                     placeholder="Apt./Unit"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
+                  />
+                </Col>
+                <Col size="sm-3">
+                  <OjBtn
+                    style={{ textAlign: "center", margin: "auto" }}
+                    type="submit"
+                    onClick={this.toggleCustomerEdit}
+                    children={this.state.editCustomer ? "Save Customer" : "Edit Customer"}
                   />
                 </Col>
               </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
+              <div className="form-row">
                 <Col size="sm-2">
                   <Input
                     type="input"
@@ -120,6 +137,7 @@ class Customer extends React.Component {
                     label="City"
                     placeholder="City"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
                 <Col size="sm-1">
@@ -130,6 +148,7 @@ class Customer extends React.Component {
                     label="State"
                     placeholder="State"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
                 <Col size="sm-1">
@@ -140,6 +159,7 @@ class Customer extends React.Component {
                     label="Zip"
                     placeholder="Zip"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
                 <Col size="sm-2">
@@ -150,9 +170,10 @@ class Customer extends React.Component {
                     label="Phone Number"
                     placeholder="Phone Number"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
                 </Col>
-                <Col size="sm-4">
+                <Col size="sm-3">
                   <Input
                     type="input"
                     name="email"
@@ -160,20 +181,33 @@ class Customer extends React.Component {
                     label="Email"
                     placeholder="Email"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editCustomer)}
                   />
-                </Col>
-                <Col size="sm-2">
-                  <EditBtn
-                    type="submit"
-                    className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Customer</EditBtn>
                 </Col>
               </div>
             </form>
+            <Row>
+              <Col size="6">
+                <BlueBtn
+                  style={{ textAlign: "center", margin: "auto" }}
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >Add Transaction</BlueBtn>
+              </Col>
+              <Col size="6">
+                <BlueBtn
+                  style={{ textAlign: "center", margin: "auto" }}
+                  type="submit"
+                  className="btn btn-block"
+                  onClick={this.handleInputChange}
+                >View Transactions</BlueBtn>
+              </Col>
+            </Row>
+            <h3 style={{ marginTop: 50 }}>Vehicle(s):</h3>
             <form>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-4">
+              <div className="form-row">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="make"
@@ -181,9 +215,10 @@ class Customer extends React.Component {
                     label="Make"
                     placeholder="Make"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
-                <Col size="sm-4">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="model"
@@ -191,9 +226,10 @@ class Customer extends React.Component {
                     label="Model"
                     placeholder="Model"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
-                <Col size="sm-4">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="year"
@@ -201,11 +237,10 @@ class Customer extends React.Component {
                     label="Year"
                     placeholder="Year"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
-              </div>
-              <div className="form-row" style={{ marginTop: "30px" }}>
-                <Col size="sm-3">
+                <Col size="sm-1">
                   <Input
                     type="input"
                     name="color"
@@ -213,9 +248,10 @@ class Customer extends React.Component {
                     label="Color"
                     placeholder="Color"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
-                <Col size="sm-3">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="plateNumber"
@@ -223,9 +259,10 @@ class Customer extends React.Component {
                     label="Plate Number"
                     placeholder="Plate Number"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
-                <Col size="sm-4">
+                <Col size="sm-2">
                   <Input
                     type="input"
                     name="vin"
@@ -233,36 +270,19 @@ class Customer extends React.Component {
                     label="VIN"
                     placeholder="VIN"
                     onChange={this.handleInputChange}
+                    disabled={!(this.state.editVehicle)}
                   />
                 </Col>
                 <Col size="sm-2">
-                  <EditBtn
+                  <OjBtn
                     type="submit"
                     className="btn btn-block"
-                    onClick={this.handleInputChange}
-                  >Edit Vehicle</EditBtn>
+                    onClick={this.toggleVehicleEdit}
+                    children={this.state.editVehicle ? "Save" : "Edit"}
+                  />
                 </Col>
               </div>
             </form>
-            <Row>
-              <Col size="sm-8" />
-              <Col size="sm-2">
-                <GenBtn
-                  style="float: left"
-                  type="submit"
-                  className="btn btn-block"
-                  onClick={this.handleInputChange}
-                >View Transactions</GenBtn>
-              </Col>
-              <Col size="sm-2">
-                <GenBtn
-                  style="float: right"
-                  type="submit"
-                  className="btn btn-block"
-                  onClick={this.handleInputChange}
-                >Add Transaction</GenBtn>
-              </Col>
-            </Row>
           </Col>
           <Col size="md-1" />
         </Row>

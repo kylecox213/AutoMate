@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import { Input, RedBtn } from "../components/Form";
 import API from "../utils/API";
 
 class Register extends React.Component {
@@ -43,7 +43,7 @@ class Register extends React.Component {
                                 <div className="form-group">
                                     <label htmlFor="password-input">Password</label>
                                     <Input type="password" id="password-input" name="password" className="form-control" onChange={this.handleInputChange} placeholder="Enter Password" required />
-                                    <FormBtn type="submit" className="btn btn-block" onClick={this.handleRegistration}>Register</FormBtn>
+                                    <RedBtn type="submit" className="btn btn-block" onClick={this.handleRegistration}>Register</RedBtn>
                                     <p className="lead mt-4">
                                         Already have an account? <a href="/">Login</a>.
                                     </p>
