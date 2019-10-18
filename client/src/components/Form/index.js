@@ -23,7 +23,8 @@ export function Radio(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <label htmlFor={props.id}>{props.label}</label>
+      <textarea className="form-control" rows="5" {...props} />
     </div>
   );
 }
